@@ -1,0 +1,23 @@
+{
+  "name": "firebase-alphaqueuejs",
+  "version": "1.0.0",
+  "description": "Helps you interact with your firebase data in a more uniform way.",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/troylelandshields/firebase-alphaqueuejs.git"
+  },
+  "keywords": [
+    "firebase",
+    "firebase-queue"
+  ],
+  "author": "troy shields",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/troylelandshields/firebase-alphaqueuejs/issues"
+  },
+  "homepage": "https://github.com/troylelandshields/firebase-alphaqueuejs#readme"
+}
