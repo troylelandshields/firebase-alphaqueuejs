@@ -50,9 +50,9 @@ var dogPromise.then(function(dog){
     var catPromise = animalSvc.createAnimal({
         name: "cat",
         slogan: "alpha queue up",
-        hates: [
-            dog.id
-        ]
+        hates: {
+            dog.id: true
+        }
     });
 
     catPromise.then(function(cat){
