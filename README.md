@@ -6,23 +6,25 @@ Usage:
 
 ```js
 
+var firebaseTaskRef = rootFirebaseRef.child("queue").child("tasks")
+
 //instantiate a new Alpha Queue service with the names of your tasks
-animalSvc := new AlphaQueue([
+var animalSvc := new AlphaQueue(firebaseTaskRef, [
     "createAnimal",
     "feedAnimal",
     "petAnimal"
 ])
 
 //interact with your tasks in an intuitive and easy-to-use way.
-dogPromise = animalSvc.createAnimal({
+var dogPromise = animalSvc.createAnimal({
     name: "dog",
     slogan: "man's best friend"
 });
 
 
-dogPromise.then(function(dog){
+var dogPromise.then(function(dog){
 
-    catPromise = animalSvc.createAnimal({
+    var catPromise = animalSvc.createAnimal({
         name: "cat",
         slogan: "alpha queue up",
         hates: [

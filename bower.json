@@ -1,0 +1,21 @@
+{
+  "name": "firebase-alphaqueuejs",
+  "description": "Helps you interact with your firebase data in a more uniform way.",
+  "main": "firebase-alphaqueue.js",
+  "authors": [
+    "troy shields"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "firebase",
+    "firebase-queue"
+  ],
+  "homepage": "https://github.com/troylelandshields/firebase-alphaqueuejs",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
