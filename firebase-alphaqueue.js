@@ -12,7 +12,7 @@
         //Create a function for pushing and receiving to each task in the queue
         tasks.forEach(function (t) {
             q[t] = sendToQueueTask(q.tasksRef, t)
-        })
+        });
     }
 
     //TODO clean this up
@@ -25,17 +25,33 @@
                 var taskRef = tasksRef.push(data)
 
                 //Watch for the state to change--when it is either error or finished then resolve or reject the promise with the appropriate data
-                tasksRef.child(taskRef.key).child("_state").on('value', function (dataSnapshot) {
+                var stateRef = tasksRef.child(taskRef.key).child("_state");
+                stateRef.on('value', function (dataSnapshot) {
 
                     if (dataSnapshot.exists()) {
                         if (dataSnapshot.val() == endStateName(taskName)) {
                             tasksRef.child(taskRef.key).once('value', function (taskSnapshot) {
-                                var taskData = taskSnapshot.val()
+                                var taskData = taskSnapshot.val();
+
+                                //Stop listening for changes
+                                stateRef.off('value')
+
+                                //Delete task
+                                taskRef.remove();
+
+
                                 resolve(taskData);
                             });
                         } else if (dataSnapshot.val() == errorStateName(taskName)) {
                             tasksRef.child(taskRef.key).once('value', function (taskSnapshot) {
-                                var taskData = taskSnapshot.val()
+                                var taskData = taskSnapshot.val();
+
+                                //Stop listening for changes
+                                stateRef.off('value')
+
+                                //Delete task
+                                taskRef.remove();
+
                                 reject(taskData._error_details);
                             });
                         }
