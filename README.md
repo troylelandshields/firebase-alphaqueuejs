@@ -7,7 +7,7 @@ Helps you interact with your firebase data in a more uniform way.
 
 or
 
-`bower install --save firebase--alphaqueuejs`
+`bower install --save firebase-alphaqueuejs`
 
 ## Include it:
 
