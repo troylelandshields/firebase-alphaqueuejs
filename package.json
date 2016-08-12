@@ -1,6 +1,6 @@
 {
   "name": "firebase-alphaqueuejs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Helps you interact with your firebase data in a more uniform way.",
   "main": "index.js",
   "scripts": {
