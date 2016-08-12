@@ -2,7 +2,7 @@
   "name": "firebase-alphaqueuejs",
   "version": "1.0.2",
   "description": "Helps you interact with your firebase data in a more uniform way.",
-  "main": "index.js",
+  "main": "firebase-alphaqueue.js",
   "scripts": {
     "test": ""
   },
